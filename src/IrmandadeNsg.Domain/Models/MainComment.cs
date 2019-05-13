@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace IrmandadeNsg.Domain.Model
+namespace IrmandadeNsg.Domain.Models
 {
     public class MainComment : Comment
     {

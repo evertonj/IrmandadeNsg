@@ -1,4 +1,4 @@
-﻿namespace IrmandadeNsg.Domain.Model
+﻿namespace IrmandadeNsg.Domain.Models
 {
     public class SubComment : Comment
     {

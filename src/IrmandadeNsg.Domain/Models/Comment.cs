@@ -1,10 +1,10 @@
-﻿using System;
+﻿using IrmandadeNsg.Domain.Core.Models;
+using System;
 
-namespace IrmandadeNsg.Domain.Model
+namespace IrmandadeNsg.Domain.Models
 {
-    public class Comment
+    public class Comment : Entity
     {
-        public int Id { get; set; } = 0;
         public string Message { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
     }
