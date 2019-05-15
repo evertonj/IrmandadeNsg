@@ -29,6 +29,7 @@ namespace IrmandadeNsg.Domain.Models
         public string Tags { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
+        public Author Author { get; set; }
         public IList<MainComment> MainComments { get; set; }
     }
 }

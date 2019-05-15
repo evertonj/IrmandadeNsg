@@ -38,12 +38,12 @@ namespace IrmandadeNsg.Domain.Validations
         }
         protected void ValidateCreated()
         {
-            RuleFor(post => post.Created).NotEmpty()
-                .Must(created => ActualPostDate(created));
+            RuleFor(post => post.Created).NotEmpty();
         }
-        protected static bool ActualPostDate(DateTime created)
+
+        protected void ValidateMainComments()
         {
-            return created >= DateTime.Now;
+            RuleFor(post => post.MainComments).NotEmpty();
         }
     }
 }

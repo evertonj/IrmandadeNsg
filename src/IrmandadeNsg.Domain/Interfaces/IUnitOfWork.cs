@@ -1,6 +1,8 @@
-﻿namespace IrmandadeNsg.Domain.Interfaces
+﻿using System;
+
+namespace IrmandadeNsg.Domain.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         bool Commit();
     }
