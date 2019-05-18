@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using IrmandadeNsg.UI.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using IrmandadeNsg.UI.Web.Models;
+using System.Diagnostics;
 
 namespace IrmandadeNsg.UI.Web.Controllers
 {

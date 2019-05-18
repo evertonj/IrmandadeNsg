@@ -8,16 +8,16 @@ namespace IrmandadeNsg.Domain.Core.DomainNotifications
 {
     public class DomainNotificationHandler : INotificationHandler<DomainNotification>
     {
-        private List<DomainNotification> _notifications;
+        private readonly List<DomainNotification> _notifications;
 
         public DomainNotificationHandler()
         {
             _notifications = new List<DomainNotification>();
         }
 
-        public Task Handle(DomainNotification message, CancellationToken cancellationToken)
+        public Task Handle(DomainNotification notification, CancellationToken cancellationToken)
         {
-            _notifications.Add(message);
+            _notifications.Add(notification);
 
             return Task.CompletedTask;
         }
@@ -30,11 +30,6 @@ namespace IrmandadeNsg.Domain.Core.DomainNotifications
         public virtual bool HasNotifications()
         {
             return GetNotifications().Any();
-        }
-
-        public void Dispose()
-        {
-            _notifications = new List<DomainNotification>();
         }
     }
 }

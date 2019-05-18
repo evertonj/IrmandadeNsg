@@ -25,15 +25,15 @@ namespace IrmandadeNsg.Domain.CommandHandlers
             Bus = bus;
         }
 
-        public Task<bool> Handle(RegisterNewPostCommand message, CancellationToken cancellationToken)
+        public Task<bool> Handle(RegisterNewPostCommand request, CancellationToken cancellationToken)
         {
-            if (!message.IsValid())
+            if (!request.IsValid())
             {
-                NotifyValidationErrors(message);
+                NotifyValidationErrors(request);
                 return Task.FromResult(false);
             }
 
-            var post = new Post(Guid.NewGuid(), message.Title, message.Body, message.Image, message.Description, message.Tags, message.Category, message.Created, message.MainComments);
+            var post = new Post(Guid.NewGuid(), request.Title, request.Body, request.Image, request.Description, request.Tags, request.Category, request.Created, request.MainComments);
 
             _postRepository.Add(post);
 
@@ -45,15 +45,15 @@ namespace IrmandadeNsg.Domain.CommandHandlers
             return Task.FromResult(true);
         }
 
-        public Task<bool> Handle(UpdatePostCommand message, CancellationToken cancellationToken)
+        public Task<bool> Handle(UpdatePostCommand request, CancellationToken cancellationToken)
         {
-            if (!message.IsValid())
+            if (!request.IsValid())
             {
-                NotifyValidationErrors(message);
+                NotifyValidationErrors(request);
                 return Task.FromResult(false);
             }
 
-            var post = new Post(message.Id, message.Title, message.Body, message.Image, message.Description, message.Tags, message.Category, message.Created, message.MainComments);
+            var post = new Post(request.Id, request.Title, request.Body, request.Image, request.Description, request.Tags, request.Category, request.Created, request.MainComments);
 
             _postRepository.Update(post);
 
@@ -65,27 +65,22 @@ namespace IrmandadeNsg.Domain.CommandHandlers
             return Task.FromResult(true);
         }
 
-        public Task<bool> Handle(RemovePostCommand message, CancellationToken cancellationToken)
+        public Task<bool> Handle(RemovePostCommand request, CancellationToken cancellationToken)
         {
-            if (!message.IsValid())
+            if (!request.IsValid())
             {
-                NotifyValidationErrors(message);
+                NotifyValidationErrors(request);
                 return Task.FromResult(false);
             }
 
-            _postRepository.Remove(message.Id);
+            _postRepository.Remove(request.Id);
 
             if (Commit())
             {
-                Bus.RaiseEvent(new PostRemovedEvent(message.Id));
+                Bus.RaiseEvent(new PostRemovedEvent(request.Id));
             }
 
             return Task.FromResult(true);
-        }
-
-        public void Dispose()
-        {
-            _postRepository.Dispose();
         }
     }
 }

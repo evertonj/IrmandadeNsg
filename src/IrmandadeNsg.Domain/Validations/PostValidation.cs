@@ -14,7 +14,7 @@ namespace IrmandadeNsg.Domain.Validations
         protected void ValidateTitle()
         {
             RuleFor(post => post.Title).NotEmpty()
-                .Length(2, 150).WithMessage("The Title must have between 2 and 150 characters"); ;
+                .Length(2, 150).WithMessage("The Title must have between 2 and 150 characters"); 
         }
         protected void ValidateBody()
         {
