@@ -17,6 +17,6 @@ namespace IrmandadeNsg.Application.ViewModels
         public string Category { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
         public Author Author { get; set; }
-        public IList<MainComment> MainComments { get; set; }
+        public List<MainComment> MainComments { get; set; }
     }
 }

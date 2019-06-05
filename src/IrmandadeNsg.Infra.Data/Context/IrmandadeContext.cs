@@ -15,7 +15,10 @@ namespace IrmandadeNsg.Infra.Data.Context
             _env = env;
         }
 
-        public DbSet<Post> Posts { get; set; }
+        public virtual DbSet<MainComment> MainComments { get; set; }
+        public virtual DbSet<SubComment> SubComments { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

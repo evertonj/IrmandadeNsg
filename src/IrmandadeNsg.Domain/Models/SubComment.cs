@@ -1,7 +1,9 @@
-﻿namespace IrmandadeNsg.Domain.Models
+﻿using System;
+
+namespace IrmandadeNsg.Domain.Models
 {
     public class SubComment : Comment
     {
-        public int MainCommentId { get; set; } = 0;
+        public Guid MainCommentId { get; set; }
     }
 }

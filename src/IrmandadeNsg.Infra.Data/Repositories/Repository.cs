@@ -53,11 +53,6 @@ namespace IrmandadeNsg.Infra.Data.Repositories
             GC.SuppressFinalize(this);
         }
 
-        ~Repository()
-        {
-            Dispose(false);
-        }
-
         protected virtual void Dispose(bool disposing)
         {
             if (disposing && (Db != null))

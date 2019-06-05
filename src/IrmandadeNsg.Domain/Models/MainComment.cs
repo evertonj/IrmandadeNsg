@@ -4,6 +4,6 @@ namespace IrmandadeNsg.Domain.Models
 {
     public class MainComment : Comment
     {
-        public IList<SubComment> SubComments { get; set; }
+        public ICollection<SubComment> SubComments { get; set; }
     }
 }

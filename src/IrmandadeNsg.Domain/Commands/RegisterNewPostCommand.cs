@@ -7,7 +7,7 @@ namespace IrmandadeNsg.Domain.Commands
 {
     public class RegisterNewPostCommand : PostCommand
     {
-        public RegisterNewPostCommand(string title, string body, string image, string description, string tags, string category, DateTime created, IList<MainComment> mainComments)
+        public RegisterNewPostCommand(string title, string body, string image, string description, string tags, string category, DateTime created, List<MainComment> mainComments)
         {
             Title = title;
             Body = body;

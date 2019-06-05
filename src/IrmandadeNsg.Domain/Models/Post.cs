@@ -1,14 +1,15 @@
-﻿using System;
+﻿using IrmandadeNsg.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
 
 namespace IrmandadeNsg.Domain.Models
 {
-    public class Post
+    public class Post : Entity
     {
         //Empty constructor for EF
         protected Post() { }
 
-        public Post(Guid id, string title, string body, string image, string description, string tags, string category, DateTime created, IList<MainComment> mainComments)
+        public Post(Guid id, string title, string body, string image, string description, string tags, string category, DateTime created, List<MainComment> mainComments)
         {
             Id = id;
             Title = title;
@@ -21,7 +22,6 @@ namespace IrmandadeNsg.Domain.Models
             MainComments = mainComments;
         }
 
-        public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Body { get; set; } = string.Empty;
         public string Image { get; set; } = string.Empty;
@@ -29,7 +29,7 @@ namespace IrmandadeNsg.Domain.Models
         public string Tags { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
-        public Author Author { get; set; }
-        public IList<MainComment> MainComments { get; set; }
+        public virtual Author Author { get; set; }
+        public virtual List<MainComment> MainComments { get; set; }
     }
 }

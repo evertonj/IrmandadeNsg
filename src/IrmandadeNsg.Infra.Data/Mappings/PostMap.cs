@@ -1,7 +1,6 @@
 ﻿using IrmandadeNsg.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Collections.Generic;
 
 namespace IrmandadeNsg.Infra.Data.Mappings
 {
@@ -16,7 +15,7 @@ namespace IrmandadeNsg.Infra.Data.Mappings
             builder.Property(post => post.Tags).IsRequired();
             builder.Property(post => post.Category).IsRequired();
             builder.Property(post => post.Created).IsRequired();
-            builder.Property<IList<MainComment>>(post => post.MainComments).IsRequired();
+            builder.HasMany(post => post.MainComments);
         }
     }
 }

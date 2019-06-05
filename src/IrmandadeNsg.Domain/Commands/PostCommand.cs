@@ -15,6 +15,6 @@ namespace IrmandadeNsg.Domain.Commands
         public string Tags { get; protected set; } = string.Empty;
         public string Category { get; protected set; } = string.Empty;
         public DateTime Created { get; protected set; } = DateTime.Now;
-        public IList<MainComment> MainComments { get; protected set; }
+        public List<MainComment> MainComments { get; protected set; }
     }
 }

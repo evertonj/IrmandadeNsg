@@ -7,7 +7,7 @@ namespace IrmandadeNsg.Domain.Commands
 {
     public class UpdatePostCommand : PostCommand
     {
-        public UpdatePostCommand(Guid id, string title, string body, string image, string description, string tags, string category, DateTime created, IList<MainComment> mainComments)
+        public UpdatePostCommand(Guid id, string title, string body, string image, string description, string tags, string category, DateTime created, List<MainComment> mainComments)
         {
             Id = id;
             Title = title;
