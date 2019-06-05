@@ -1,0 +1,15 @@
+.grid {
+    background-color: #159;
+    display: grid;
+    grid-template-columns: 1fr;
+    .item {
+        text-align: center;
+        p {
+            text-align: justify;
+            background-color: azure;
+        }
+        img {
+            width: 70%;
+        }
+    }
+}

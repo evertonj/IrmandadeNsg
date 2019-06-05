@@ -1,0 +1,21 @@
+.grid {
+    margin: 0 auto;
+    width: 70%;
+    display: grid;
+    .grid-template-1 {
+        grid-template-columns: 1fr 1fr;
+    }
+    .item {
+        background-color: tomato;
+        text-align: center;
+    }
+    .item-span-2 {
+        grid-column: span 2;
+    }
+    .item-margin-left {
+        margin-left: 5%;
+    }
+    .item-margin-right {
+        margin-right: 5%;
+    }
+}
